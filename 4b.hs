@@ -16,8 +16,8 @@ main = do
 
   let ([rawNumbers] : rawBoards) = splitBy null $ lines input
   let numbers = map read $ splitBy (== ',') rawNumbers :: [Int]
-  let bingos = map (map (map (Unmarked . read) . words)) rawBoards
-  print $ solve bingos numbers
+  let boards = map (map (map (Unmarked . read) . words)) rawBoards
+  print $ solve boards numbers
 
 solve :: [Board] -> [Int] -> Int
 solve boards numbers =
