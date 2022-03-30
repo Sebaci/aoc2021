@@ -12,8 +12,7 @@ solve :: [([String], [String])] -> Int
 solve = length . filter isUnique . concatMap snd
   where
     isUnique number = length number `elem` uniqueLengths
-      where
-        uniqueLengths = [2, 3, 4, 7] -- unique lengths for numbers 1,7,4,8
+    uniqueLengths = [2, 3, 4, 7] -- unique lengths for numbers 1,7,4,8
 
 parseInput :: String -> [([String], [String])]
 parseInput = map parseLine . lines
